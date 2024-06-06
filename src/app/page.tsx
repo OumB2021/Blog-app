@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="text-center pt-32 px-5">
+    <main className="flex flex-col justify-center items-center my-auto">
       <h1 className="font-bold text-4xl md:text-5xl mb-5 ">
         Welcome to my blog app
       </h1>
