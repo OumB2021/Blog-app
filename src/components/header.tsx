@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
   {
@@ -17,8 +20,9 @@ const navLinks = [
 ];
 
 export const Header = () => {
+  const pathname = usePathname();
   return (
-    <header className="flex items-center justify-between py-4 px-7 border-b">
+    <header className="flex items-center justify-between py-4 px-7 border-b ">
       <Link href="/">
         <Image
           src="https://bytegrad.com/course-assets/youtube/example-logo.png"
@@ -31,7 +35,12 @@ export const Header = () => {
         <ul className="flex gap-x-5 text-[14px]">
           {navLinks.map((link) => (
             <li key={link.href}>
-              <Link className="text-zinc-400 hover:text-black" href={link.href}>
+              <Link
+                className={`${
+                  pathname === link.href ? "text-zinc-900" : "text-zinc-400"
+                } hover:text-black font-medium`}
+                href={link.href}
+              >
                 {link.label}
               </Link>
             </li>
