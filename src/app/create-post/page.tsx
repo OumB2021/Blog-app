@@ -1,7 +1,14 @@
 import { CreatePostAction } from "@/actions/create-post";
 import { Button } from "@/components/ui/button";
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import { redirect } from "next/navigation";
 
-const CreatePost = () => {
+const CreatePost = async () => {
+  const { isAuthenticated } = getKindeServerSession();
+  if (!(await isAuthenticated())) {
+    const absoluteRedirectUrl = `http://localhost:3000/create-post`;
+    redirect(`/api/auth/login?post_login_redirect_url=${absoluteRedirectUrl}`);
+  }
   return (
     <div className="text-center pt-16">
       <h1 className="font-bold text-4xl mb-7 text-center">Create post</h1>
