@@ -1,9 +1,6 @@
 import { CreatePostAction } from "@/actions/create-post";
 import { Button } from "@/components/ui/button";
-import {
-  LogoutLink,
-  getKindeServerSession,
-} from "@kinde-oss/kinde-auth-nextjs/server";
+import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/server";
 import { redirect } from "next/navigation";
 
 const CreatePost = async () => {
@@ -25,8 +22,6 @@ const CreatePost = async () => {
           Submit
         </Button>
       </form>
-
-      <LogoutLink>Logout</LogoutLink>
     </div>
   );
 };

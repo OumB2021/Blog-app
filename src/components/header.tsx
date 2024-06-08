@@ -3,6 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import { LogOut } from "./logout";
 
 const navLinks = [
   {
@@ -21,6 +23,25 @@ const navLinks = [
 
 export const Header = () => {
   const pathname = usePathname();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const checkAuthStatus = async () => {
+      try {
+        const response = await fetch("/api/auth/status");
+        if (!response.ok) {
+          throw new Error("Network response error: " + respone);
+        }
+        const data = await response.json();
+        console.log(data.isLoggedIn);
+        setIsLoggedIn(data.isLoggedIn);
+      } catch (error) {
+        console.error("Failed to check authentication status:", error);
+      }
+    };
+
+    checkAuthStatus();
+  }, []);
   return (
     <header className="flex items-center justify-between py-4 px-7 border-b ">
       <Link href="/">
@@ -45,6 +66,13 @@ export const Header = () => {
               </Link>
             </li>
           ))}
+          {isLoggedIn && (
+            <li>
+              <LogOut className="text-zinc-300 font-semibold p-3 rounded-md bg-zinc-900 hover:text-white">
+                Logout
+              </LogOut>
+            </li>
+          )}
         </ul>
       </nav>
     </header>
