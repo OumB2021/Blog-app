@@ -33,7 +33,6 @@ export const Header = () => {
           throw new Error("Network response error: " + respone);
         }
         const data = await response.json();
-        console.log(data.isLoggedIn);
         setIsLoggedIn(data.isLoggedIn);
       } catch (error) {
         console.error("Failed to check authentication status:", error);
