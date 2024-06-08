@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { LogOut } from "./logout";
+import { Button } from "./ui/button";
 
 const navLinks = [
   {
@@ -52,7 +53,7 @@ export const Header = () => {
         />
       </Link>
       <nav>
-        <ul className="flex gap-x-5 text-[14px]">
+        <ul className="flex items-center gap-x-5 text-[14px]">
           {navLinks.map((link) => (
             <li key={link.href}>
               <Link
@@ -67,8 +68,8 @@ export const Header = () => {
           ))}
           {isLoggedIn && (
             <li>
-              <LogOut className="text-zinc-300 font-semibold p-3 rounded-md bg-zinc-900 hover:text-white">
-                Logout
+              <LogOut>
+                <Button>Logout</Button>
               </LogOut>
             </li>
           )}
