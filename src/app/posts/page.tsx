@@ -1,4 +1,4 @@
-import { PostList } from "@/components/post-list";
+import { PostList } from "@/app/posts/_components/post-list";
 import Link from "next/link";
 import { Suspense } from "react";
 import PostLoading from "./post-loading";

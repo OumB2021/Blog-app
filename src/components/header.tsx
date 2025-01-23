@@ -59,8 +59,10 @@ export const Header = () => {
               <li key={link.href}>
                 <Link
                   className={`${
-                    pathname === link.href ? "text-zinc-900" : "text-zinc-400"
-                  } hover:text-black font-medium`}
+                    pathname === link.href
+                      ? "text-zinc-900 font-semibold"
+                      : "text-zinc-400"
+                  } hover:text-black `}
                   href={link.href}
                 >
                   {link.label}
