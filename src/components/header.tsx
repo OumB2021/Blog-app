@@ -31,7 +31,7 @@ export const Header = () => {
       try {
         const response = await fetch("/api/auth/status");
         if (!response.ok) {
-          throw new Error("Network response error: " + respone);
+          throw new Error("Network response error: " + response);
         }
         const data = await response.json();
         setIsLoggedIn(data.isLoggedIn);
@@ -43,38 +43,40 @@ export const Header = () => {
     checkAuthStatus();
   }, []);
   return (
-    <header className="flex items-center justify-between py-4 px-7 border-b ">
-      <Link href="/">
-        <Image
-          src="https://bytegrad.com/course-assets/youtube/example-logo.png"
-          alt="Logo"
-          width="40"
-          height="40"
-        />
-      </Link>
-      <nav>
-        <ul className="flex items-center gap-x-5 text-[14px]">
-          {navLinks.map((link) => (
-            <li key={link.href}>
-              <Link
-                className={`${
-                  pathname === link.href ? "text-zinc-900" : "text-zinc-400"
-                } hover:text-black font-medium`}
-                href={link.href}
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
-          {isLoggedIn && (
-            <li>
-              <LogOut>
-                <Button>Logout</Button>
-              </LogOut>
-            </li>
-          )}
-        </ul>
-      </nav>
-    </header>
+    <div className="border-b ">
+      <header className="flex items-center justify-between py-4 px-7 max-w-7xl mx-auto">
+        <Link href="/">
+          <Image
+            src="https://bytegrad.com/course-assets/youtube/example-logo.png"
+            alt="Logo"
+            width="40"
+            height="40"
+          />
+        </Link>
+        <nav>
+          <ul className="flex items-center gap-x-5 text-[14px]">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <Link
+                  className={`${
+                    pathname === link.href ? "text-zinc-900" : "text-zinc-400"
+                  } hover:text-black font-medium`}
+                  href={link.href}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+            {isLoggedIn && (
+              <li>
+                <LogOut>
+                  <Button>Logout</Button>
+                </LogOut>
+              </li>
+            )}
+          </ul>
+        </nav>
+      </header>
+    </div>
   );
 };

@@ -10,9 +10,9 @@ const Post = async ({ params }: { params: { postId: string } }) => {
   return (
     <main className="flex flex-col justify-center items-center pt-24">
       <h1 className="font-bold text-4xl mb-7 max-w-[700px] text-center">
-        {post.title}
+        {post?.title}
       </h1>
-      <p className="max-w-[700px] mx-auto">{post.body}</p>
+      <p className="max-w-[700px] mx-auto">{post?.body}</p>
     </main>
   );
 };

@@ -2,8 +2,6 @@ import { CreatePostAction } from "@/actions/create-post";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/server";
-import { redirect } from "next/navigation";
 
 const CreatePost = async () => {
   return (
@@ -21,7 +19,6 @@ const CreatePost = async () => {
           required
         />
         <Textarea
-          type="text"
           name="body"
           placeholder="Body content for new post"
           className="border rounded px-3"

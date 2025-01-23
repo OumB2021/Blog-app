@@ -1,7 +1,7 @@
 import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs";
 
 interface LogoutProps {
-  classname: string;
+  className?: string;
   children: React.ReactNode;
 }
 export const LogOut = ({ className, children }: LogoutProps) => {

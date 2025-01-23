@@ -1,6 +1,7 @@
 "use server";
 
 import prisma from "@/lib/db";
+import { redirect } from "next/navigation";
 
 export const CreatePostAction = async (formData: FormData) => {
   const title = formData.get("title") as string;
@@ -11,4 +12,5 @@ export const CreatePostAction = async (formData: FormData) => {
       body,
     },
   });
+  redirect("/posts");
 };

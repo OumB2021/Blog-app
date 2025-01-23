@@ -20,8 +20,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} text-zinc-900 min-h-screen`}>
+        <Header />
         <Container>
-          <Header />
           {children}
           <Footer />
         </Container>
