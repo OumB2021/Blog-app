@@ -4,7 +4,7 @@ interface ContainerProps {
 
 export const Container = ({ children }: ContainerProps) => {
   return (
-    <div className="max-w-[1100px] mx-auto min-h-screen flex flex-col">
+    <div className="max-w-[1100px] mx-auto min-h-screen flex flex-col ">
       {children}
     </div>
   );

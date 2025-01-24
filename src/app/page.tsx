@@ -7,16 +7,22 @@ export default function Home() {
       <h1 className="font-bold text-4xl md:text-5xl mb-5 ">
         Welcome to my blog app
       </h1>
-      <p className="max-w-[750px] mx-auto leading-8">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis
-        officia sapiente fugit inventore assumenda doloribus vel pariatur
-        aperiam, optio quia? Neque itaque inventore aliquid sequi in, esse ad
-        explicabo voluptate quibusdam eligendi quia eius, voluptatum laudantium
-        dignissimos doloribus, repudiandae optio amet omnis harum possimus
-        repellendus rem officia quod et! Nam?
+      <p className="md:max-w-[750px] text-center leading-8 text-zinc-600 font-light">
+        Welcome to my blog app! This is a space where ideas come to life,
+        stories are shared, and knowledge flows freely. Whether you&apos;re here
+        to explore the latest trends, dive into thought-provoking articles, or
+        simply find inspiration, you&apos;ve come to the right place. From
+        technology and innovation to lifestyle tips, personal growth, and
+        everything in between, we aim to create a platform that sparks curiosity
+        and fuels creativity. Take a moment to browse, learn, and
+        connect—there&apos;s something here for everyone. We&apos;re excited to
+        have you join this journey of discovery and conversation. Let&apos;s
+        explore together!
       </p>
-      <Button className="mt-5">
-        <Link href="/posts">View our posts</Link>
+      <Button className="mt-5 rounded-sm">
+        <Link href="/posts" className="font-light">
+          View our posts
+        </Link>
       </Button>
     </main>
   );

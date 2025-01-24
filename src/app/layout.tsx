@@ -5,7 +5,11 @@ import { Header } from "@/components/header";
 import Footer from "@/components/footer";
 import { Container } from "@/components/container";
 
-const inter = Inter({ subsets: ["latin"] });
+const interFont = Inter({
+  subsets: ["latin"], // Specify subsets for better optimization
+  variable: "--font-inter", // Define a CSS variable for the font
+  display: "swap", // Use "swap" to improve performance
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,7 +23,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} text-zinc-900 min-h-screen`}>
+      <body
+        className={`${interFont.className} text-zinc-900 min-h-screen bg-gradient-to-tr from-zinc-50 to-zinc-100`}
+      >
         <Header />
         <Container>
           {children}

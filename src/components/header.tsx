@@ -43,7 +43,7 @@ export const Header = () => {
     checkAuthStatus();
   }, []);
   return (
-    <div className="border-b ">
+    <div className="shadow-sm">
       <header className="flex items-center justify-between py-4 px-7 max-w-7xl mx-auto">
         <Link href="/">
           <Image
@@ -61,7 +61,7 @@ export const Header = () => {
                   className={`${
                     pathname === link.href
                       ? "text-zinc-900 font-semibold"
-                      : "text-zinc-400"
+                      : "text-zinc-400 font-light"
                   } hover:text-black `}
                   href={link.href}
                 >

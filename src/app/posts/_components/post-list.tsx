@@ -1,6 +1,7 @@
 import prisma from "@/lib/db";
 import Link from "next/link";
 import { Button } from "../../../components/ui/button";
+import PostCard from "./post-card";
 
 export const PostList = async () => {
   const posts = await prisma.post.findMany();
@@ -16,7 +17,13 @@ export const PostList = async () => {
           </Button>
         </div>
       ) : (
-        <div className="flex flex-col gap-2"></div>
+        <div className="flex justify-center flex-wrap gap-4">
+          <PostCard />
+          <PostCard />
+          <PostCard />
+          <PostCard />
+          <PostCard />
+        </div>
         // <ul>
         //   {posts.map((post) => (
         //     <li
