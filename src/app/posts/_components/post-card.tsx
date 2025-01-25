@@ -1,10 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
 
 function PostCard() {
   return (
-    <div className="flex flex-col gap-4 p-4 bg-zinc-50 shadow-sm rounded-md max-w-sm">
+    <div className="flex flex-col gap-4 p-1 bg-white shadow-md rounded-md max-w-sm w-72">
       {/* IMAGE */}
-      <div className="relative w-full h-56">
+      <div className="relative w-full h-44">
         <Image
           src="/img.jpg"
           layout="fill"
@@ -13,13 +14,15 @@ function PostCard() {
           className="rounded-md"
         />
       </div>
-
       {/* INFO */}
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2 p-2">
         {/* Title */}
-        <h2 className="text-xl font-bold">
-          The Future of Technology: Innovations that are Transforming Our World
-        </h2>
+        <Link href={`/posts/${1}`}>
+          <h2 className="text-xl font-bold text-zinc-800 hover:text-blue-900">
+            The Future of Technology: Innovations that are Transforming Our
+            World
+          </h2>
+        </Link>
         {/* Description */}
         <p className="text-gray-600 text-sm">
           Explore the latest technological advancements and their impact on
@@ -27,10 +30,10 @@ function PostCard() {
           about the cutting-edge innovations.
         </p>
         {/* Author and Date */}
-        <div className="flex items-center justify-between text-gray-500 text-sm">
-          <div className="flex flex-col gap-2 text-left">
-            <p>by Ryan Lee</p>
-            <p>August 24, 2023</p>
+        <div className="flex items-center justify-between text-gray-500 text-sm mt-5">
+          <div className="flex flex-col text-left">
+            <p className=" text-sm text-blue-900">Ryan Lee</p>
+            <p className="text-xs">August 24, 2023</p>
           </div>
           {/* Actions */}
           <div className="flex items-center justify-end gap-2">

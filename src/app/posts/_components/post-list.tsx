@@ -6,7 +6,7 @@ import PostCard from "./post-card";
 export const PostList = async () => {
   const posts = await prisma.post.findMany();
   return (
-    <div>
+    <div className="flex items-center justify-center p-4">
       {posts.length === 0 ? (
         <div>
           <p className="mt-10 font-medium text-muted-foreground">
@@ -17,7 +17,7 @@ export const PostList = async () => {
           </Button>
         </div>
       ) : (
-        <div className="flex justify-center flex-wrap gap-4">
+        <div className="flex flex-wrap items-center justify-center gap-4">
           <PostCard />
           <PostCard />
           <PostCard />
