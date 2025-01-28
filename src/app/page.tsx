@@ -4,10 +4,10 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main className="flex flex-col justify-center items-center my-auto">
-      <h1 className="font-bold text-4xl md:text-5xl mb-5 ">
+      <h1 className="font-bold text-center text-xl sm:text-4xl md:text-5xl mb-5 ">
         Welcome to my blog app
       </h1>
-      <p className="md:max-w-[750px] text-center leading-8 text-zinc-600 font-light">
+      <p className="md:max-w-[750px] px-4 md:px-0 text-center leading-6 sm:leading-8 text-sm sm:text-base text-zinc-600 font-light">
         Welcome to my blog app! This is a space where ideas come to life,
         stories are shared, and knowledge flows freely. Whether you&apos;re here
         to explore the latest trends, dive into thought-provoking articles, or

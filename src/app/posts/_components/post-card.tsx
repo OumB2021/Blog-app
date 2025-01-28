@@ -4,31 +4,14 @@ import Link from "next/link";
 function PostCard() {
   return (
     <div className="flex flex-col gap-4 p-1 bg-white shadow-md rounded-md max-w-sm w-72">
-      {/* IMAGE */}
-      <div className="relative w-full h-44">
-        <Image
-          src="/img.jpg"
-          layout="fill"
-          objectFit="cover"
-          alt="Article image"
-          className="rounded-md"
-        />
-      </div>
       {/* INFO */}
       <div className="flex flex-col gap-2 p-2">
         {/* Title */}
         <Link href={`/posts/${1}`}>
-          <h2 className="text-xl font-bold text-zinc-800 hover:text-blue-900">
-            The Future of Technology: Innovations that are Transforming Our
-            World
+          <h2 className="text-xl font-semibold text-zinc-800 hover:text-blue-900">
+            The Future of Technology
           </h2>
         </Link>
-        {/* Description */}
-        <p className="text-gray-600 text-sm">
-          Explore the latest technological advancements and their impact on
-          society. From Artificial Intelligence to the Internet of Things, learn
-          about the cutting-edge innovations.
-        </p>
         {/* Author and Date */}
         <div className="flex items-center justify-between text-gray-500 text-sm mt-5">
           <div className="flex flex-col text-left">
