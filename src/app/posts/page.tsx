@@ -6,7 +6,7 @@ import PostLoading from "./post-loading";
 const Posts = async () => {
   return (
     <main>
-      <div className="flex flex-col pt-16 pb-10">
+      <div className="flex flex-col pt-10 md:pt-16 md:pb-10">
         <h1 className="font-semibold text-4xl md:text-5xl text-center ">
           Articles
         </h1>

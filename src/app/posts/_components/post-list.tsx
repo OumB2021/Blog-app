@@ -8,9 +8,9 @@ export const PostList = async () => {
   return (
     <div className="flex items-center justify-center p-4">
       {posts.length === 0 ? (
-        <div className="flex flex-col items-center justify-center">
-          <p className="mt-10 font-medium text-muted-foreground">
-            There's no post at the moment
+        <div className="flex flex-col items-center justify-center ">
+          <p className="md:mt-10 font-medium text-muted-foreground">
+            There&apos;s no post at the moment
           </p>
           <Button className="mt-5">
             <Link href="/create-post">Create a post</Link>

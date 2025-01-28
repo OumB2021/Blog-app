@@ -5,7 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 
 const CreatePost = async () => {
   return (
-    <div className="text-center pt-16">
+    <div className="text-center pt-10 md:pt-16 p-4">
       <h1 className="font-bold text-4xl mb-7 text-center">Create post</h1>
       <form
         action={CreatePostAction}
